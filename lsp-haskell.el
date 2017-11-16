@@ -253,7 +253,7 @@ Each option is a plist of (:key :default :title) wherein:
                          '("hie" "--lsp" "-d" "-l" "/tmp/hie.log")
                          :language-id-fn #'lsp-haskell--id-fn)
 
-(defun lsp-haskell--id-fn (f) f)
+(defun lsp-haskell--id-fn (f) "haskell")
 
 (provide 'lsp-haskell)
 ;;; lsp-haskell.el ends here
