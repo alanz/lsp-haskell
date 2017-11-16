@@ -250,8 +250,10 @@ Each option is a plist of (:key :default :title) wherein:
 ;; ---------------------------------------------------------------------
 
 (lsp-define-stdio-client lsp-haskell "haskell" #'lsp-haskell--get-root
-			 '("hie" "--lsp" "-d" "-l" "/tmp/hie.log"))
-        ;; '("lsp-hello"))
+                         '("hie" "--lsp" "-d" "-l" "/tmp/hie.log")
+                         :language-id-fn #'lsp-haskell--id-fn)
+
+(defun lsp-haskell--id-fn (f) f)
 
 (provide 'lsp-haskell)
 ;;; lsp-haskell.el ends here
