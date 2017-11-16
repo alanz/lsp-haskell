@@ -249,11 +249,12 @@ Each option is a plist of (:key :default :title) wherein:
              (set (make-local-variable v) (buffer-local-value v buffer)))))
 ;; ---------------------------------------------------------------------
 
-(lsp-define-stdio-client lsp-haskell "haskell" #'lsp-haskell--get-root
+(lsp-define-stdio-client-noninteractive lsp-haskell "haskell" #'lsp-haskell--get-root
                          '("hie" "--lsp" "-d" "-l" "/tmp/hie.log")
                          :language-id-fn #'lsp-haskell--id-fn)
+(defun lsp-haskell--id-fn (_f) "haskell")
 
-(defun lsp-haskell--id-fn (f) "haskell")
+(lsp-define-interactive-client lsp-haskell)
 
 (provide 'lsp-haskell)
 ;;; lsp-haskell.el ends here
