@@ -255,5 +255,9 @@ Each option is a plist of (:key :default :title) wherein:
 
 (defun lsp-haskell--id-fn (f) "haskell")
 
+(lsp-define-whitelist-enable  lsp-haskell #'lsp-haskell--get-root)
+(lsp-define-whitelist-disable lsp-haskell #'lsp-haskell--get-root)
+
+
 (provide 'lsp-haskell)
 ;;; lsp-haskell.el ends here
